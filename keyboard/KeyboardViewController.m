@@ -86,13 +86,19 @@
     
     
     if ( lpgr.state != UIGestureRecognizerStateEnded ) {
+        if (_timer != nil) {
+            return;
+        }
+        
         
         _timer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(backword) userInfo:nil repeats:YES];
     }
     
     else {
-        [_timer invalidate];
-        _timer = nil;
+        if (_timer != nil) {
+            [_timer invalidate];
+            _timer = nil;
+        }
     }
 }
 
