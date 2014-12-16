@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property (strong, nonatomic) SJKeyboard *keyboard;
 @property (strong, nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL isShift;
 @end
 
 @implementation KeyboardViewController
@@ -26,6 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _isShift = NO;
+    
     self.keyboard = [[[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil] firstObject];
     self.inputView = _keyboard;
     [self setPrimaryLanguage:@"ko"];
@@ -36,6 +39,9 @@
     }
     
     [_keyboard.backspaceKey addTarget:self action:@selector(backword) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [_keyboard.shiftKey addTarget:self action:@selector(shift) forControlEvents:UIControlEventTouchUpInside];
     
     [_keyboard.spaceKey addTarget:self action:@selector(space) forControlEvents:UIControlEventTouchUpInside];
     
@@ -76,6 +82,10 @@
 
 - (void)key:(UIButton*)key{
     [self.textDocumentProxy insertText:[[key.titleLabel.text decomposedStringWithCompatibilityMapping]precomposedStringWithCompatibilityMapping]];
+    
+    if (_isShift) {
+        [self shift];
+    }
 }
 
 - (void)backword{
@@ -103,6 +113,30 @@
 }
 
 - (void)shift{
+    if (!_isShift) {
+        [UIView setAnimationsEnabled:NO];
+        for (UIButton* key in _keyboard.keys) {
+            [key setTitle:[key.titleLabel.text uppercaseString] forState:UIControlStateNormal];
+        }
+        [_keyboard.shiftKey setBackgroundColor:[UIColor darkGrayColor]];
+        
+        [UIView setAnimationsEnabled:YES];
+        _isShift = YES;
+    }
+    
+    else {
+        
+        [UIView setAnimationsEnabled:NO];
+        for (UIButton* key in _keyboard.keys) {
+            [key setTitle:[key.titleLabel.text lowercaseString] forState:UIControlStateNormal];
+        }
+        
+        [_keyboard.shiftKey setBackgroundColor:[UIColor colorWithWhite:0.17f alpha:1.0f]];
+        
+        [UIView setAnimationsEnabled:YES];
+        _isShift = NO;
+    }
+    
 }
 
 - (void)numKeyboard{
