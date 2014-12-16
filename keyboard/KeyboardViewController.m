@@ -12,6 +12,7 @@
 @interface KeyboardViewController ()
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property (strong, nonatomic) SJKeyboard *keyboard;
+@property (strong, nonatomic) NSTimer *timer;
 @end
 
 @implementation KeyboardViewController
@@ -36,31 +37,16 @@
     
     [_keyboard.backspaceKey addTarget:self action:@selector(backword) forControlEvents:UIControlEventTouchUpInside];
     
-    
     [_keyboard.spaceKey addTarget:self action:@selector(space) forControlEvents:UIControlEventTouchUpInside];
     
     [_keyboard.enterKey addTarget:self action:@selector(returnSelector) forControlEvents:UIControlEventTouchUpInside];
     
     [_keyboard.nextKeyboardKey addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(backwordLong:)];
+    [_keyboard.backspaceKey addGestureRecognizer:longPressGR];
     
     return;
-    
-    
-    // Perform custom UI setup here
-    self.nextKeyboardButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    [self.nextKeyboardButton setTitle:NSLocalizedString(@"Next Keyboard", @"Title for 'Next Keyboard' button") forState:UIControlStateNormal];
-    [self.nextKeyboardButton sizeToFit];
-    self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.nextKeyboardButton addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.nextKeyboardButton];
-    
-    NSLayoutConstraint *nextKeyboardButtonLeftSideConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
-    NSLayoutConstraint *nextKeyboardButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
-    [self.view addConstraints:@[nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint]];
 }
 
 
@@ -94,6 +80,20 @@
 
 - (void)backword{
     [self.textDocumentProxy deleteBackward];
+}
+
+- (void)backwordLong:(UILongPressGestureRecognizer*)lpgr{
+    
+    
+    if ( lpgr.state != UIGestureRecognizerStateEnded ) {
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(backword) userInfo:nil repeats:YES];
+    }
+    
+    else {
+        [_timer invalidate];
+        _timer = nil;
+    }
 }
 
 - (void)shift{

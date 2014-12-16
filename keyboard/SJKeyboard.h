@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *spaceKey;
 @property (strong, nonatomic) IBOutlet UIButton *nextKeyboardKey;
 @property (strong, nonatomic) IBOutlet UIButton *numberKeyboardKey;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @end
