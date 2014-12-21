@@ -63,7 +63,7 @@
     
     [keyboard.enterKey addTarget:self action:@selector(returnSelector) forControlEvents:UIControlEventTouchUpInside];
     
-    [keyboard.nextKeyboardKey addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.nextKeyboardKey addTarget:self action:@selector(nextKeyboardMode) forControlEvents:UIControlEventTouchUpInside];
     
     
     [keyboard.numberKeyboardKey addTarget:self action:@selector(numberKeyboard) forControlEvents:UIControlEventTouchUpInside];
@@ -137,9 +137,9 @@
 - (void)key:(UIButton*)key{
     [self.textDocumentProxy insertText:key.titleLabel.text];
     
-//    if (_isShift) {
-//        [self shift];
-//    }
+    if (_keyboard.isShift) {
+        [self shift];
+    }
 }
 
 - (void)backword{
@@ -183,6 +183,8 @@
     }
     
     
+    
+    
     if (!_keyboard.isShift) {
         [UIView setAnimationsEnabled:NO];
         for (UIButton* key in _keyboard.keys) {
@@ -213,6 +215,12 @@
     if (_isNumKeyboard) {
         self.inputView = _keyboard;
         _isNumKeyboard = NO;
+        
+        
+        _keyboard.isShift = NO;
+        _numKeyboard.isShift = NO;
+        _specialKeyboard.isShift = NO;
+        
         return;
     }
     
@@ -228,6 +236,13 @@
     [self.textDocumentProxy insertText:@"\n"];
 }
 
+- (void)nextKeyboardMode{
+    _keyboard.isShift = NO;
+    _numKeyboard.isShift = NO;
+    _specialKeyboard.isShift = NO;
+    
+    [self advanceToNextInputMode];
+}
 
 
 
