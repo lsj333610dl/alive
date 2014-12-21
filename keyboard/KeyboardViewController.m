@@ -32,7 +32,7 @@
     
     _isNumKeyboard = NO;
     
-    self.keyboard = [[[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil] firstObject];
+    self.keyboard = [[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil][0];
     self.numKeyboard = [[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil][1];
     self.specialKeyboard = [[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil][2];
     
@@ -92,27 +92,21 @@
 
 
 - (void)rightSwipe:(UISwipeGestureRecognizer*)sender{
-//    SJKeyboard *keyboard = (SJKeyboard*)sender.view;
-    
     [_keyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
     [_keyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
     [_numKeyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
     [_numKeyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
     [_specialKeyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
     [_specialKeyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
-//    [keyboard layoutIfNeeded];
 }
 
 - (void)leftSwipe:(UISwipeGestureRecognizer*)sender{
-//    SJKeyboard *keyboard = (SJKeyboard*)sender.view;
-    
     [_keyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
     [_keyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
     [_numKeyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
     [_numKeyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
     [_specialKeyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
     [_specialKeyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
-//    [keyboard layoutIfNeeded];
 }
 
 

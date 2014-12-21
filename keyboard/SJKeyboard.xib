@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -26,7 +28,7 @@
                             <rect key="frame" x="48" y="170" width="42" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="globe-15.png">
+                            <state key="normal" image="globe">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -53,7 +55,7 @@
                             <rect key="frame" x="1" y="117" width="42" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="⬆︎">
+                            <state key="normal" image="shift">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -62,7 +64,7 @@
                             <rect key="frame" x="273" y="117" width="44" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="⌫">
+                            <state key="normal" image="delete">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -375,7 +377,7 @@
                             <rect key="frame" x="48" y="170" width="42" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="globe-15.png">
+                            <state key="normal" image="globe">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -411,7 +413,7 @@
                             <rect key="frame" x="273" y="117" width="44" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="⌫">
+                            <state key="normal" image="delete">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -713,7 +715,7 @@
                             <rect key="frame" x="48" y="170" width="42" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" image="globe-15.png">
+                            <state key="normal" image="globe">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -749,8 +751,7 @@
                             <rect key="frame" x="273" y="117" width="44" height="40"/>
                             <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="⌫">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="delete">
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -1031,9 +1032,584 @@
             </connections>
             <point key="canvasLocation" x="478" y="879"/>
         </view>
+        <view contentMode="scaleToFill" restorationIdentifier="main2Keyboard" id="llR-9p-Fm8" customClass="SJKeyboard">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XR-Z4-kyC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNB-OG-Ity" customClass="SJKeyButton">
+                            <rect key="frame" x="0.0" y="165" width="43" height="52"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="43" id="wd4-61-FkI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="123">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo0-JH-6OR" customClass="SJKeyButton">
+                            <rect key="frame" x="43" y="165" width="42" height="52"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="42" id="OdY-Z2-luQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="globe">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8Z-L4-H1W" customClass="SJKeyButton">
+                            <rect key="frame" x="85" y="165" width="185" height="52"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="185" id="B4H-Wx-pag"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Space">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-bW-1lw" customClass="SJKeyButton">
+                            <rect key="frame" x="270" y="165" width="50" height="52"/>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="I9g-Ak-3nY"/>
+                                <constraint firstAttribute="height" constant="52" id="s29-em-1KG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="⏎">
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wQ-8C-Sts" customClass="SJKeyButton">
+                            <rect key="frame" x="0.0" y="110" width="42" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="42" id="seK-Nb-QoO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="shift">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlT-6J-Qic" customClass="SJKeyButton">
+                            <rect key="frame" x="276" y="110" width="44" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="IwT-2u-v7J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="delete">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3H-60-45J" customClass="SJKeyButton">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="eWJ-Ou-E0x"/>
+                                <constraint firstAttribute="width" constant="32" id="uaF-bd-MhH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="q">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsV-ye-8HW" customClass="SJKeyButton">
+                            <rect key="frame" x="32" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="zFv-WT-Ct9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="w">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qx-jI-aF9" customClass="SJKeyButton">
+                            <rect key="frame" x="64" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="6NA-W5-u1U"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="e">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-YZ-fSq" customClass="SJKeyButton">
+                            <rect key="frame" x="96" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="YzT-pi-v5Z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="r">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-Ug-4gm" customClass="SJKeyButton">
+                            <rect key="frame" x="128" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="zbb-PT-pO5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="t">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foZ-t6-h2y" customClass="SJKeyButton">
+                            <rect key="frame" x="160" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="Wmz-ds-DrD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="y">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjN-HC-Exw" customClass="SJKeyButton">
+                            <rect key="frame" x="192" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="q8f-0R-eO7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="u">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXR-EB-EP0" customClass="SJKeyButton">
+                            <rect key="frame" x="224" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="DkF-Ib-AIP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="i">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-jF-uJc" customClass="SJKeyButton">
+                            <rect key="frame" x="256" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="Wb7-cK-W0U"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="o">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwf-Wz-l4i" customClass="SJKeyButton">
+                            <rect key="frame" x="288" y="0.0" width="32" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="SpU-Kp-v79"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="p">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCV-Yu-Cny" customClass="SJKeyButton">
+                            <rect key="frame" x="35" y="55" width="35" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="szB-Pv-8ui"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="s">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhw-3a-OqA" customClass="SJKeyButton">
+                            <rect key="frame" x="70" y="55" width="35" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="HhR-48-JhD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="d">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeP-MF-SIw" customClass="SJKeyButton">
+                            <rect key="frame" x="105" y="55" width="36" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="Uip-WX-ZpV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="f">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBW-Ol-SFU" customClass="SJKeyButton">
+                            <rect key="frame" x="141" y="55" width="36" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="NEW-I5-MaS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="g">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPo-pj-Zsc" customClass="SJKeyButton">
+                            <rect key="frame" x="177" y="55" width="36" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="NQW-Cl-UAp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="h">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-eD-JwZ" customClass="SJKeyButton">
+                            <rect key="frame" x="213" y="55" width="36" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="iuH-OU-mwD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="j">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-Lh-Pv4" customClass="SJKeyButton">
+                            <rect key="frame" x="249" y="55" width="36" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="lU2-Tm-nra"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="k">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsl-nd-Xg8" customClass="SJKeyButton">
+                            <rect key="frame" x="285" y="55" width="35" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="2oj-ew-wlc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="l">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zad-6R-JgT" customClass="SJKeyButton">
+                            <rect key="frame" x="42" y="110" width="34" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="cDh-nD-NEg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="z">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX1-B1-vG6" customClass="SJKeyButton">
+                            <rect key="frame" x="76" y="110" width="33" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="nEA-0i-Upf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="x">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4S-Od-j3k" customClass="SJKeyButton">
+                            <rect key="frame" x="109" y="110" width="33" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="DLe-bc-zHr"/>
+                                <constraint firstAttribute="height" constant="54" id="kDS-KN-qbu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="c">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCy-J5-et2" customClass="SJKeyButton">
+                            <rect key="frame" x="142" y="110" width="33" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="KBN-Hy-cSP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="v">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-fw-cff" customClass="SJKeyButton">
+                            <rect key="frame" x="175" y="110" width="34" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="ngT-UX-4TL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="b">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTO-SF-67t" customClass="SJKeyButton">
+                            <rect key="frame" x="209" y="110" width="34" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="97i-jp-PbZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="n">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHQ-sq-lpB" customClass="SJKeyButton">
+                            <rect key="frame" x="243" y="110" width="33" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="nBn-CD-xjn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="m">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foa-bP-1Y9" customClass="SJKeyButton">
+                            <rect key="frame" x="0.0" y="55" width="35" height="54"/>
+                            <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="VlK-kt-rX0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="a">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="gBW-Ol-SFU" secondAttribute="top" id="05K-9u-PQg"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="bottom" secondItem="2wQ-8C-Sts" secondAttribute="bottom" id="0oH-j9-A2c"/>
+                        <constraint firstItem="jTO-SF-67t" firstAttribute="leading" secondItem="g9e-fw-cff" secondAttribute="trailing" id="1Dw-cj-c2z"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="oeP-MF-SIw" secondAttribute="firstBaseline" id="1Fg-O8-U9h"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="firstBaseline" secondItem="v8Z-L4-H1W" secondAttribute="baseline" id="1fE-RD-dh4"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="oeP-MF-SIw" secondAttribute="bottom" constant="1" id="1pt-U5-Ds9"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="leading" secondItem="v8Z-L4-H1W" secondAttribute="trailing" id="1rS-mz-Qjn"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="Zad-6R-JgT" secondAttribute="firstBaseline" id="2zd-yK-RyT"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="leading" secondItem="ZX1-B1-vG6" secondAttribute="trailing" id="3wE-qi-XLz"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="Nhw-3a-OqA" secondAttribute="baseline" id="4Da-Qp-2qd"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="g9e-fw-cff" secondAttribute="baseline" id="4Uh-EU-TqH"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="MVt-Lh-Pv4" secondAttribute="firstBaseline" id="4vU-o9-xef"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="foZ-t6-h2y" secondAttribute="baseline" id="4wD-MU-reX"/>
+                        <constraint firstItem="g9e-fw-cff" firstAttribute="leading" secondItem="vCy-J5-et2" secondAttribute="trailing" id="5Mp-YD-cVW"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="vjN-HC-Exw" secondAttribute="baseline" id="5SY-bU-z33"/>
+                        <constraint firstAttribute="trailing" secondItem="rsl-nd-Xg8" secondAttribute="trailing" id="5bY-2b-Qcv"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="foa-bP-1Y9" secondAttribute="baseline" id="5fD-gX-96q"/>
+                        <constraint firstItem="SsV-ye-8HW" firstAttribute="leading" secondItem="K3H-60-45J" secondAttribute="trailing" id="6BT-hX-PDv"/>
+                        <constraint firstItem="oeP-MF-SIw" firstAttribute="leading" secondItem="Nhw-3a-OqA" secondAttribute="trailing" id="8uK-DS-aQ0"/>
+                        <constraint firstAttribute="bottom" secondItem="dRC-bW-1lw" secondAttribute="bottom" constant="-1" id="9KT-ff-LIc"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="foZ-t6-h2y" secondAttribute="top" id="9Pf-2A-KRj"/>
+                        <constraint firstItem="foZ-t6-h2y" firstAttribute="leading" secondItem="oDW-Ug-4gm" secondAttribute="trailing" id="9uP-tP-IS0"/>
+                        <constraint firstItem="foa-bP-1Y9" firstAttribute="leading" secondItem="7XR-Z4-kyC" secondAttribute="leading" id="Aqb-xi-f6c"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="jCV-Yu-Cny" secondAttribute="baseline" id="Axp-A2-WAx"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="rsl-nd-Xg8" secondAttribute="top" id="BJx-47-4dh"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="oeP-MF-SIw" secondAttribute="top" id="BS6-gQ-EVB"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="Zad-6R-JgT" secondAttribute="top" id="BcM-bY-kvc"/>
+                        <constraint firstItem="9Qx-jI-aF9" firstAttribute="leading" secondItem="SsV-ye-8HW" secondAttribute="trailing" id="BgO-WU-mJx"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="firstBaseline" secondItem="gBW-Ol-SFU" secondAttribute="baseline" id="Byx-ER-dMu"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="g9e-fw-cff" secondAttribute="firstBaseline" id="C5G-pS-166"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="rsl-nd-Xg8" secondAttribute="firstBaseline" id="D9Z-Ll-HU6"/>
+                        <constraint firstItem="jCV-Yu-Cny" firstAttribute="leading" secondItem="foa-bP-1Y9" secondAttribute="trailing" id="DNS-qv-Yrl"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="MVt-Lh-Pv4" secondAttribute="top" id="E4q-O2-mDB"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="vCy-J5-et2" secondAttribute="firstBaseline" id="EXJ-X4-ueS"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="baseline" secondItem="xNB-OG-Ity" secondAttribute="baseline" id="Eq6-dp-i7B"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="g9e-fw-cff" secondAttribute="top" id="Eup-1B-J6R"/>
+                        <constraint firstAttribute="trailing" secondItem="SlT-6J-Qic" secondAttribute="trailing" id="FFG-fz-qFh"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="top" secondItem="xNB-OG-Ity" secondAttribute="top" id="FmO-xD-21h"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="wiS-jF-uJc" secondAttribute="baseline" id="G7E-S9-s7r"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="tEd-eD-JwZ" secondAttribute="firstBaseline" id="HZk-s5-JfF"/>
+                        <constraint firstItem="Vwf-Wz-l4i" firstAttribute="leading" secondItem="wiS-jF-uJc" secondAttribute="trailing" id="Hfy-JN-81O"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="top" secondItem="qo0-JH-6OR" secondAttribute="top" id="IoM-OF-Ulv"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="7XR-Z4-kyC" secondAttribute="top" id="JA3-mG-FBD"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="top" secondItem="RHQ-sq-lpB" secondAttribute="bottom" constant="1" id="Kho-nn-AkO"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="Vwf-Wz-l4i" secondAttribute="top" id="Lnc-XG-fgv"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="baseline" secondItem="v8Z-L4-H1W" secondAttribute="firstBaseline" id="MuX-Zm-cBY"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="ZX1-B1-vG6" secondAttribute="firstBaseline" id="NeI-gx-2Xc"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="RHQ-sq-lpB" secondAttribute="top" id="NrL-hx-knT"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="vXR-EB-EP0" secondAttribute="top" id="NyW-s7-oDn"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="oDW-Ug-4gm" secondAttribute="firstBaseline" id="NzM-bK-pjV"/>
+                        <constraint firstItem="foa-bP-1Y9" firstAttribute="top" secondItem="K3H-60-45J" secondAttribute="bottom" constant="1" id="O9G-Km-RZX"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="jTO-SF-67t" secondAttribute="baseline" id="POX-B6-0ga"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="leading" secondItem="gBW-Ol-SFU" secondAttribute="trailing" id="RAs-h6-Sxj"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="bottom" secondItem="SlT-6J-Qic" secondAttribute="bottom" id="RBK-yK-q4L"/>
+                        <constraint firstItem="vXR-EB-EP0" firstAttribute="leading" secondItem="vjN-HC-Exw" secondAttribute="trailing" id="T2N-sg-Vfr"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="SlT-6J-Qic" secondAttribute="top" id="TO9-Yx-n8m"/>
+                        <constraint firstItem="Zad-6R-JgT" firstAttribute="leading" secondItem="2wQ-8C-Sts" secondAttribute="trailing" id="TUs-f1-ExX"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="ZX1-B1-vG6" secondAttribute="baseline" id="TZT-rW-aPt"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="tEd-eD-JwZ" secondAttribute="baseline" id="Ubr-dG-yeP"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="Nhw-3a-OqA" secondAttribute="firstBaseline" id="Uor-km-Kb9"/>
+                        <constraint firstItem="gBW-Ol-SFU" firstAttribute="leading" secondItem="oeP-MF-SIw" secondAttribute="trailing" id="V10-sE-dcV"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="ZX1-B1-vG6" secondAttribute="top" id="VsQ-hm-3eH"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="oeP-MF-SIw" secondAttribute="baseline" id="XUe-yu-6tU"/>
+                        <constraint firstItem="vCy-J5-et2" firstAttribute="leading" secondItem="X4S-Od-j3k" secondAttribute="trailing" id="Xw4-Ix-BE1"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="SsV-ye-8HW" secondAttribute="top" id="YY8-HH-uYL"/>
+                        <constraint firstItem="xNB-OG-Ity" firstAttribute="leading" secondItem="7XR-Z4-kyC" secondAttribute="leading" id="Yno-aU-OY0"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="foa-bP-1Y9" secondAttribute="top" id="ZvT-sa-EQM"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="Zad-6R-JgT" secondAttribute="baseline" id="a9L-0M-xXb"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="SsV-ye-8HW" secondAttribute="firstBaseline" id="aR3-bN-Val"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="vjN-HC-Exw" secondAttribute="top" id="b5C-XO-FOB"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="bbL-YZ-fSq" secondAttribute="top" id="bVV-ET-xBV"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="2wQ-8C-Sts" secondAttribute="top" id="c4V-uh-6i0"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="vjN-HC-Exw" secondAttribute="firstBaseline" id="c58-J7-UPp"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="oDW-Ug-4gm" secondAttribute="baseline" id="cEh-gw-csk"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="top" secondItem="v8Z-L4-H1W" secondAttribute="top" id="cNc-yp-Aoo"/>
+                        <constraint firstItem="SlT-6J-Qic" firstAttribute="leading" secondItem="RHQ-sq-lpB" secondAttribute="trailing" id="cuc-RJ-Pmn"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="9Qx-jI-aF9" secondAttribute="baseline" id="d1s-FN-kKm"/>
+                        <constraint firstItem="bbL-YZ-fSq" firstAttribute="leading" secondItem="9Qx-jI-aF9" secondAttribute="trailing" id="dBg-Gx-DX8"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="MVt-Lh-Pv4" secondAttribute="baseline" id="dkZ-pG-a0S"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="vCy-J5-et2" secondAttribute="top" id="dt9-Gr-Mzk"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="rsl-nd-Xg8" secondAttribute="baseline" id="e1C-qe-bc0"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="leading" secondItem="7XR-Z4-kyC" secondAttribute="leading" id="ebW-Cm-3bb"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="gBW-Ol-SFU" secondAttribute="baseline" id="f1G-M7-QBt"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="oDW-Ug-4gm" secondAttribute="top" id="f1n-gB-1a5"/>
+                        <constraint firstItem="qo0-JH-6OR" firstAttribute="leading" secondItem="xNB-OG-Ity" secondAttribute="trailing" id="fC2-W4-ScK"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="tEd-eD-JwZ" secondAttribute="top" id="fxW-3x-a9T"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="foZ-t6-h2y" secondAttribute="firstBaseline" id="gFV-69-bN7"/>
+                        <constraint firstItem="Nhw-3a-OqA" firstAttribute="leading" secondItem="jCV-Yu-Cny" secondAttribute="trailing" id="gdj-rm-mx3"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="top" secondItem="jTO-SF-67t" secondAttribute="top" id="gnJ-Ag-u68"/>
+                        <constraint firstItem="rsl-nd-Xg8" firstAttribute="leading" secondItem="MVt-Lh-Pv4" secondAttribute="trailing" id="h2X-cg-EFr"/>
+                        <constraint firstAttribute="trailing" secondItem="Vwf-Wz-l4i" secondAttribute="trailing" id="h5I-fa-dYb"/>
+                        <constraint firstItem="2wQ-8C-Sts" firstAttribute="leading" secondItem="7XR-Z4-kyC" secondAttribute="leading" id="hRF-Og-GkL"/>
+                        <constraint firstItem="ZX1-B1-vG6" firstAttribute="leading" secondItem="Zad-6R-JgT" secondAttribute="trailing" id="hmi-F5-RPH"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="Vwf-Wz-l4i" secondAttribute="baseline" id="i5p-hT-UKR"/>
+                        <constraint firstItem="tEd-eD-JwZ" firstAttribute="leading" secondItem="cPo-pj-Zsc" secondAttribute="trailing" id="iT5-4h-39f"/>
+                        <constraint firstItem="MVt-Lh-Pv4" firstAttribute="leading" secondItem="tEd-eD-JwZ" secondAttribute="trailing" id="jrG-ld-6Zw"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="9Qx-jI-aF9" secondAttribute="top" id="kVc-oy-ThE"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="gBW-Ol-SFU" secondAttribute="firstBaseline" id="lzW-ow-JYX"/>
+                        <constraint firstAttribute="trailing" secondItem="dRC-bW-1lw" secondAttribute="trailing" id="nra-3c-0kE"/>
+                        <constraint firstItem="oDW-Ug-4gm" firstAttribute="leading" secondItem="bbL-YZ-fSq" secondAttribute="trailing" id="oAM-Al-HrT"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="bottom" secondItem="qo0-JH-6OR" secondAttribute="bottom" id="oLN-s5-Bw7"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="bbL-YZ-fSq" secondAttribute="firstBaseline" id="oVV-JY-mpy"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="bbL-YZ-fSq" secondAttribute="baseline" id="odi-Ef-bWQ"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="vXR-EB-EP0" secondAttribute="firstBaseline" id="p7I-gQ-lnm"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="Nhw-3a-OqA" secondAttribute="top" id="pA0-JA-ehN"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="vXR-EB-EP0" secondAttribute="baseline" id="pCl-YN-lxt"/>
+                        <constraint firstAttribute="width" constant="320" id="pSk-4e-cHO"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="jCV-Yu-Cny" secondAttribute="firstBaseline" id="pnT-Pd-FX9"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="vCy-J5-et2" secondAttribute="baseline" id="q40-9f-Q2d"/>
+                        <constraint firstItem="v8Z-L4-H1W" firstAttribute="leading" secondItem="qo0-JH-6OR" secondAttribute="trailing" id="qhm-tE-xgR"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="firstBaseline" secondItem="ZX1-B1-vG6" secondAttribute="baseline" id="qhs-Cn-GJg"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="firstBaseline" secondItem="SsV-ye-8HW" secondAttribute="baseline" id="u3B-2s-eYn"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="baseline" secondItem="foa-bP-1Y9" secondAttribute="firstBaseline" id="u7Y-S6-70Y"/>
+                        <constraint firstItem="RHQ-sq-lpB" firstAttribute="leading" secondItem="jTO-SF-67t" secondAttribute="trailing" id="u8i-rp-9Wd"/>
+                        <constraint firstItem="dRC-bW-1lw" firstAttribute="baseline" secondItem="xNB-OG-Ity" secondAttribute="firstBaseline" id="uct-1a-RG2"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="RHQ-sq-lpB" secondAttribute="baseline" id="uia-sm-GcO"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="9Qx-jI-aF9" secondAttribute="firstBaseline" id="v2z-on-wGn"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="Vwf-Wz-l4i" secondAttribute="firstBaseline" id="vua-9E-VVH"/>
+                        <constraint firstItem="wiS-jF-uJc" firstAttribute="leading" secondItem="vXR-EB-EP0" secondAttribute="trailing" id="w0E-23-dj7"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="top" secondItem="wiS-jF-uJc" secondAttribute="top" id="w2b-6m-Lqk"/>
+                        <constraint firstItem="vjN-HC-Exw" firstAttribute="leading" secondItem="foZ-t6-h2y" secondAttribute="trailing" id="wYc-A9-09M"/>
+                        <constraint firstItem="cPo-pj-Zsc" firstAttribute="top" secondItem="jCV-Yu-Cny" secondAttribute="top" id="xDO-lK-zMF"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="wiS-jF-uJc" secondAttribute="firstBaseline" id="yCh-bY-9UC"/>
+                        <constraint firstItem="K3H-60-45J" firstAttribute="baseline" secondItem="SsV-ye-8HW" secondAttribute="baseline" id="yWY-a3-Edq"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="RHQ-sq-lpB" secondAttribute="firstBaseline" id="ylC-yM-jsz"/>
+                        <constraint firstItem="X4S-Od-j3k" firstAttribute="baseline" secondItem="jTO-SF-67t" secondAttribute="firstBaseline" id="zzU-2v-8xi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="7XR-Z4-kyC" firstAttribute="leading" secondItem="llR-9p-Fm8" secondAttribute="leading" id="Ru8-Pg-v1B"/>
+                <constraint firstAttribute="trailing" secondItem="7XR-Z4-kyC" secondAttribute="trailing" id="Vq1-n5-Ye8"/>
+                <constraint firstAttribute="bottom" secondItem="7XR-Z4-kyC" secondAttribute="bottom" id="WkB-PW-dvr"/>
+                <constraint firstItem="7XR-Z4-kyC" firstAttribute="top" secondItem="llR-9p-Fm8" secondAttribute="top" id="vyX-Dt-WPM"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backspaceKey" destination="SlT-6J-Qic" id="ESb-pj-Zl3"/>
+                <outlet property="bgView" destination="7XR-Z4-kyC" id="5Wq-Vy-PQR"/>
+                <outlet property="enterKey" destination="dRC-bW-1lw" id="tOX-hX-DjM"/>
+                <outlet property="leftSpace" destination="Ru8-Pg-v1B" id="e1z-Qy-w6h"/>
+                <outlet property="nextKeyboardKey" destination="qo0-JH-6OR" id="eeC-d0-7e3"/>
+                <outlet property="numberKeyboardKey" destination="xNB-OG-Ity" id="ba5-xW-6LH"/>
+                <outlet property="rightSpace" destination="Vq1-n5-Ye8" id="7Lx-HP-hJG"/>
+                <outlet property="shiftKey" destination="2wQ-8C-Sts" id="L6b-OI-MJV"/>
+                <outlet property="spaceKey" destination="v8Z-L4-H1W" id="4tO-37-uq3"/>
+                <outletCollection property="keys" destination="K3H-60-45J" id="2zB-Bt-kFM"/>
+                <outletCollection property="keys" destination="SsV-ye-8HW" id="rGK-M5-V0U"/>
+                <outletCollection property="keys" destination="9Qx-jI-aF9" id="hH5-Gu-EGa"/>
+                <outletCollection property="keys" destination="bbL-YZ-fSq" id="fTv-33-vPf"/>
+                <outletCollection property="keys" destination="oDW-Ug-4gm" id="KEU-dY-Tb4"/>
+                <outletCollection property="keys" destination="foZ-t6-h2y" id="1St-g3-Idm"/>
+                <outletCollection property="keys" destination="vjN-HC-Exw" id="ver-sd-NOM"/>
+                <outletCollection property="keys" destination="vXR-EB-EP0" id="b17-jV-iXZ"/>
+                <outletCollection property="keys" destination="wiS-jF-uJc" id="gIY-hX-gf4"/>
+                <outletCollection property="keys" destination="Vwf-Wz-l4i" id="p9R-TW-S03"/>
+                <outletCollection property="keys" destination="foa-bP-1Y9" id="lzH-BH-TJ8"/>
+                <outletCollection property="keys" destination="jCV-Yu-Cny" id="OOM-Yc-aew"/>
+                <outletCollection property="keys" destination="Nhw-3a-OqA" id="KQD-go-ZY7"/>
+                <outletCollection property="keys" destination="oeP-MF-SIw" id="xjB-0Y-cas"/>
+                <outletCollection property="keys" destination="gBW-Ol-SFU" id="RTp-Wv-8Rb"/>
+                <outletCollection property="keys" destination="cPo-pj-Zsc" id="n9u-6d-nz0"/>
+                <outletCollection property="keys" destination="tEd-eD-JwZ" id="yty-7P-Boz"/>
+                <outletCollection property="keys" destination="MVt-Lh-Pv4" id="Sli-t4-aF6"/>
+                <outletCollection property="keys" destination="rsl-nd-Xg8" id="m1G-gU-RBa"/>
+                <outletCollection property="keys" destination="Zad-6R-JgT" id="G6k-ck-ZQg"/>
+                <outletCollection property="keys" destination="ZX1-B1-vG6" id="NUk-xR-v34"/>
+                <outletCollection property="keys" destination="X4S-Od-j3k" id="pOP-c6-5Ng"/>
+                <outletCollection property="keys" destination="vCy-J5-et2" id="hHW-nW-mvr"/>
+                <outletCollection property="keys" destination="g9e-fw-cff" id="K4E-Co-VaH"/>
+                <outletCollection property="keys" destination="jTO-SF-67t" id="a8R-aH-NMr"/>
+                <outletCollection property="keys" destination="RHQ-sq-lpB" id="y7Z-1y-h3X"/>
+            </connections>
+            <point key="canvasLocation" x="478" y="1150"/>
+        </view>
     </objects>
     <resources>
-        <image name="globe-15.png" width="15" height="15"/>
+        <image name="delete" width="16" height="16"/>
+        <image name="globe" width="16" height="16"/>
+        <image name="shift" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

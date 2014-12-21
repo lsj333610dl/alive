@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F9FB0CB1A40CEC700041B06 /* SJKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FB0CA1A40CEC700041B06 /* SJKeyButton.m */; };
 		401627441A3F13A6005514E3 /* SJKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401627431A3F13A6005514E3 /* SJKeyboard.xib */; };
-		401917871A4675BB0098AB39 /* globe-15.png in Resources */ = {isa = PBXBuildFile; fileRef = 401917861A4675BB0098AB39 /* globe-15.png */; };
-		4019178A1A4676730098AB39 /* globe-15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 401917881A4676730098AB39 /* globe-15@2x.png */; };
-		4019178B1A4676730098AB39 /* globe-15@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 401917891A4676730098AB39 /* globe-15@3x.png */; };
+		4019178C1A467CD60098AB39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A95CC71A3F0FCC000BABE0 /* Images.xcassets */; };
 		40A95CBD1A3F0FCC000BABE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A95CBC1A3F0FCC000BABE0 /* main.m */; };
 		40A95CC01A3F0FCC000BABE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A95CBF1A3F0FCC000BABE0 /* AppDelegate.m */; };
 		40A95CC31A3F0FCC000BABE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A95CC21A3F0FCC000BABE0 /* ViewController.m */; };
@@ -68,9 +66,6 @@
 		1F9FB0CA1A40CEC700041B06 /* SJKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJKeyButton.m; sourceTree = "<group>"; };
 		401627431A3F13A6005514E3 /* SJKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJKeyboard.xib; sourceTree = "<group>"; };
 		401627451A3F34F4005514E3 /* alive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = alive.entitlements; sourceTree = "<group>"; };
-		401917861A4675BB0098AB39 /* globe-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-15.png"; sourceTree = "<group>"; };
-		401917881A4676730098AB39 /* globe-15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-15@2x.png"; sourceTree = "<group>"; };
-		401917891A4676730098AB39 /* globe-15@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-15@3x.png"; sourceTree = "<group>"; };
 		40A95CB71A3F0FCC000BABE0 /* alive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A95CBB1A3F0FCC000BABE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40A95CBC1A3F0FCC000BABE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -183,9 +178,6 @@
 		40A95CE51A3F0FDB000BABE0 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
-				401917861A4675BB0098AB39 /* globe-15.png */,
-				401917881A4676730098AB39 /* globe-15@2x.png */,
-				401917891A4676730098AB39 /* globe-15@3x.png */,
 				40B5ED711A46490100277A68 /* keyboard.entitlements */,
 				40A95CE81A3F0FDB000BABE0 /* KeyboardViewController.h */,
 				40A95CE91A3F0FDB000BABE0 /* KeyboardViewController.m */,
@@ -341,10 +333,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4019178A1A4676730098AB39 /* globe-15@2x.png in Resources */,
-				4019178B1A4676730098AB39 /* globe-15@3x.png in Resources */,
 				401627441A3F13A6005514E3 /* SJKeyboard.xib in Resources */,
-				401917871A4675BB0098AB39 /* globe-15.png in Resources */,
+				4019178C1A467CD60098AB39 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

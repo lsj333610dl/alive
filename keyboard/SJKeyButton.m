@@ -12,7 +12,7 @@
 
 - (void)drawRect:(CGRect)rect{
     
-    self.layer.cornerRadius = 5.0f;
+    self.layer.cornerRadius = 4.5f;
     self.layer.borderWidth = 0.5f;
     self.layer.borderColor = [UIColor colorWithWhite:0.1f alpha:1.0f].CGColor;
     self.layer.masksToBounds = YES;
