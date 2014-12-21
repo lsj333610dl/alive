@@ -12,8 +12,11 @@
 @interface KeyboardViewController ()
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property (strong, nonatomic) SJKeyboard *keyboard;
+@property (strong, nonatomic) SJKeyboard *numKeyboard;
+@property (strong, nonatomic) SJKeyboard *specialKeyboard;
 @property (strong, nonatomic) NSTimer *timer;
-@property (nonatomic) BOOL isShift;
+//@property (nonatomic) BOOL isShift;
+@property (nonatomic) BOOL isNumKeyboard;
 @end
 
 @implementation KeyboardViewController
@@ -27,32 +30,89 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _isShift = NO;
+    _isNumKeyboard = NO;
     
     self.keyboard = [[[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil] firstObject];
+    self.numKeyboard = [[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil][1];
+    self.specialKeyboard = [[NSBundle mainBundle] loadNibNamed:@"SJKeyboard" owner:nil options:nil][2];
+    
     self.inputView = _keyboard;
     [self setPrimaryLanguage:@"ko"];
     
+    [self keyboardSetting:_keyboard];
+    [self keyboardSetting:_numKeyboard];
+    [self keyboardSetting:_specialKeyboard];
     
-    for (UIButton *key in _keyboard.keys) {
+    
+   
+}
+
+
+- (void)keyboardSetting:(SJKeyboard*)keyboard{
+    
+    for (UIButton *key in keyboard.keys) {
         [key addTarget:self action:@selector(key:) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    [_keyboard.backspaceKey addTarget:self action:@selector(backword) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.backspaceKey addTarget:self action:@selector(backword) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [_keyboard.shiftKey addTarget:self action:@selector(shift) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.shiftKey addTarget:self action:@selector(shift) forControlEvents:UIControlEventTouchUpInside];
     
-    [_keyboard.spaceKey addTarget:self action:@selector(space) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.spaceKey addTarget:self action:@selector(space) forControlEvents:UIControlEventTouchUpInside];
     
-    [_keyboard.enterKey addTarget:self action:@selector(returnSelector) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.enterKey addTarget:self action:@selector(returnSelector) forControlEvents:UIControlEventTouchUpInside];
     
-    [_keyboard.nextKeyboardKey addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
+    [keyboard.nextKeyboardKey addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [keyboard.numberKeyboardKey addTarget:self action:@selector(numberKeyboard) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     
     UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(backwordLong:)];
-    [_keyboard.backspaceKey addGestureRecognizer:longPressGR];
+    [keyboard.backspaceKey addGestureRecognizer:longPressGR];
     
-    return;
+    [keyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
+    [keyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
+    [keyboard layoutIfNeeded];
+    
+    
+    UISwipeGestureRecognizer *rightSGR = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe:)];
+    [rightSGR setDirection:UISwipeGestureRecognizerDirectionRight];
+    
+    UISwipeGestureRecognizer *leftSGR = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftSwipe:)];
+    
+    [leftSGR setDirection:UISwipeGestureRecognizerDirectionLeft];
+    
+    
+    [keyboard addGestureRecognizer:rightSGR];
+    [keyboard addGestureRecognizer:leftSGR];
+}
+
+
+- (void)rightSwipe:(UISwipeGestureRecognizer*)sender{
+//    SJKeyboard *keyboard = (SJKeyboard*)sender.view;
+    
+    [_keyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
+    [_keyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
+    [_numKeyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
+    [_numKeyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
+    [_specialKeyboard.leftSpace setPriority:UILayoutPriorityDefaultLow];
+    [_specialKeyboard.rightSpace setPriority:UILayoutPriorityDefaultHigh];
+//    [keyboard layoutIfNeeded];
+}
+
+- (void)leftSwipe:(UISwipeGestureRecognizer*)sender{
+//    SJKeyboard *keyboard = (SJKeyboard*)sender.view;
+    
+    [_keyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
+    [_keyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
+    [_numKeyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
+    [_numKeyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
+    [_specialKeyboard.leftSpace setPriority:UILayoutPriorityDefaultHigh];
+    [_specialKeyboard.rightSpace setPriority:UILayoutPriorityDefaultLow];
+//    [keyboard layoutIfNeeded];
 }
 
 
@@ -81,11 +141,11 @@
 #pragma mark - keySelectors
 
 - (void)key:(UIButton*)key{
-    [self.textDocumentProxy insertText:[[key.titleLabel.text decomposedStringWithCompatibilityMapping]precomposedStringWithCompatibilityMapping]];
+    [self.textDocumentProxy insertText:key.titleLabel.text];
     
-    if (_isShift) {
-        [self shift];
-    }
+//    if (_isShift) {
+//        [self shift];
+//    }
 }
 
 - (void)backword{
@@ -113,15 +173,31 @@
 }
 
 - (void)shift{
-    if (!_isShift) {
+    if (_isNumKeyboard) {
+        
+        
+        if (_numKeyboard.isShift) {
+            self.inputView = _numKeyboard;
+        }
+        
+        else
+            self.inputView = _specialKeyboard;
+        
+        
+        _numKeyboard.isShift = !_numKeyboard.isShift;
+        return;
+    }
+    
+    
+    if (!_keyboard.isShift) {
         [UIView setAnimationsEnabled:NO];
         for (UIButton* key in _keyboard.keys) {
             [key setTitle:[key.titleLabel.text uppercaseString] forState:UIControlStateNormal];
         }
-        [_keyboard.shiftKey setBackgroundColor:[UIColor darkGrayColor]];
+        [_keyboard.shiftKey setBackgroundColor:[UIColor colorWithRed:231/255.0f green:76/255.0f blue:60/255.0f alpha:1.0f]];
         
         [UIView setAnimationsEnabled:YES];
-        _isShift = YES;
+        _keyboard.isShift = YES;
     }
     
     else {
@@ -131,16 +207,23 @@
             [key setTitle:[key.titleLabel.text lowercaseString] forState:UIControlStateNormal];
         }
         
-        [_keyboard.shiftKey setBackgroundColor:[UIColor colorWithWhite:0.17f alpha:1.0f]];
+        [_keyboard.shiftKey setBackgroundColor:[UIColor colorWithWhite:0.23f alpha:1.0f]];
         
         [UIView setAnimationsEnabled:YES];
-        _isShift = NO;
+        _keyboard.isShift = NO;
     }
     
 }
 
-- (void)numKeyboard{
+- (void)numberKeyboard{
+    if (_isNumKeyboard) {
+        self.inputView = _keyboard;
+        _isNumKeyboard = NO;
+        return;
+    }
     
+    self.inputView = _numKeyboard;
+    _isNumKeyboard = YES;
 }
 
 - (void)space{

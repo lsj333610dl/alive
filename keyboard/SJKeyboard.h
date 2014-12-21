@@ -17,5 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *nextKeyboardKey;
 @property (strong, nonatomic) IBOutlet UIButton *numberKeyboardKey;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
-
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *leftSpace;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *rightSpace;
+@property (nonatomic) BOOL isShift;
 @end

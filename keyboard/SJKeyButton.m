@@ -12,8 +12,8 @@
 
 - (void)drawRect:(CGRect)rect{
     
-    self.layer.cornerRadius = 7.0f;
-    self.layer.borderWidth = 1.0f;
+    self.layer.cornerRadius = 5.0f;
+    self.layer.borderWidth = 0.5f;
     self.layer.borderColor = [UIColor colorWithWhite:0.1f alpha:1.0f].CGColor;
     self.layer.masksToBounds = YES;
 }
@@ -23,7 +23,7 @@
     [super setHighlighted:highlighted];
     
     if (highlighted) {
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [self setTitleColor:[UIColor colorWithRed:58/255.0f green:58/255.0f blue:58/255.0f alpha:1.0f] forState:UIControlStateHighlighted];
     }
 }
 
