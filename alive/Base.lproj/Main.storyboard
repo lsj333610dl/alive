@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,21 +17,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-Kk-5RV">
-                                <rect key="frame" x="237" y="28" width="127" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="1oA-96-PCA"/>
-                                    <constraint firstAttribute="height" constant="26" id="xh2-7t-GXb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to setup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="EHp-UE-nYS">
+                                <rect key="frame" x="16" y="80" width="568" height="66"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
                                 <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="LWr-J3-kKe">
+                                <rect key="frame" x="16" y="333" width="568" height="66"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-WZ-fcU">
+                                <rect key="frame" x="16" y="164" width="568" height="151"/>
+                                <string key="text">1. Open Settings App
+2. Select General
+3. Select Keyboard 
+4. Select Keyboards
+5. Select Add New Keyboard
+6. Select Just One Hand</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Yce-qb-MRR">
+                                <rect key="frame" x="16" y="407" width="568" height="51"/>
+                                <string key="text">1. Just use keyboard
+2. Swipe Right or Left</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-Kk-5RV">
+                                <rect key="frame" x="150" y="28" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1oA-96-PCA"/>
+                                    <constraint firstAttribute="height" constant="40" id="xh2-7t-GXb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <color key="textColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.22647569440000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.90196078430000004" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="LWr-J3-kKe" firstAttribute="top" secondItem="Cfc-WZ-fcU" secondAttribute="bottom" constant="18" id="7NF-jD-arK"/>
+                            <constraint firstItem="Cfc-WZ-fcU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="81S-ae-uNy"/>
+                            <constraint firstItem="Yce-qb-MRR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="97w-mo-hgy"/>
+                            <constraint firstItem="Cfc-WZ-fcU" firstAttribute="top" secondItem="EHp-UE-nYS" secondAttribute="bottom" constant="18" id="COG-DI-ajE"/>
+                            <constraint firstItem="EHp-UE-nYS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Lcg-S8-cv7"/>
                             <constraint firstItem="AMH-Kk-5RV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="PZK-cT-E3R"/>
+                            <constraint firstItem="Yce-qb-MRR" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="WUb-ZO-ovT"/>
                             <constraint firstItem="AMH-Kk-5RV" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="X7t-DX-QBT"/>
+                            <constraint firstItem="EHp-UE-nYS" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="fsC-bW-hsl"/>
+                            <constraint firstItem="Yce-qb-MRR" firstAttribute="top" secondItem="LWr-J3-kKe" secondAttribute="bottom" constant="8" id="hRX-7k-5PZ"/>
+                            <constraint firstItem="LWr-J3-kKe" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="i8b-kN-oMV"/>
+                            <constraint firstItem="LWr-J3-kKe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="kjK-ES-Inf"/>
+                            <constraint firstItem="EHp-UE-nYS" firstAttribute="top" secondItem="AMH-Kk-5RV" secondAttribute="bottom" constant="12" id="rBQ-1j-cTD"/>
+                            <constraint firstItem="Cfc-WZ-fcU" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="yEW-BN-dkq"/>
                         </constraints>
                     </view>
                 </viewController>
